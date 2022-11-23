@@ -29,7 +29,7 @@ for a in df["codigo"].unique():
 
 by_cantidadVentas = Productos.sort_values('cantidad',ascending=False).reset_index()
 
-print(by_cantidadVentas.head(5))
+#print(by_cantidadVentas.head(5))
 
 for f in range(0,6):
     cont=0
@@ -39,5 +39,36 @@ for f in range(0,6):
         cont+=1
 
 #Con lo anterior pudimos notar que hay productos que se venden en gran cantidad y que ademas, vencen muy rapido
+
+# ACOTAREMOS EL PROBLEMA A PRODUCTOS QUE VENCEN RAPIDO
+
+dfEmpanaPino=df[df["codigo"]==(by_cantidadVentas["codigo"][0])].reset_index()
+#print(dfEmpanaPino)
+
+for dia in range(0,7):
+    df5=dfEmpanaPino[dfEmpanaPino["dia"]==dia]
+    df6=dfEmpanaPino[dfEmpanaPino["dia"]==dia+7]
+    promedioVentas=df5["dia"].size+df6["dia"].size
+    print(promedioVentas, " Empanadas de pino son vendidas el dia ",dia+1," de la semana")
+
+
+dfEmpanaQueso=df[df["codigo"]==(by_cantidadVentas["codigo"][3])].reset_index()
+#print(dfEmpanaQueso)
+
+for dia in range(0,7):
+    df5=dfEmpanaQueso[dfEmpanaQueso["dia"]==dia]
+    df6=dfEmpanaQueso[dfEmpanaQueso["dia"]==dia+7]
+    promedioVentas=df5["dia"].size+df6["dia"].size
+    print(promedioVentas, " Empanadas de queso son vendidas el dia ",dia+1," de la semana")
+
+
+dfhayulla=df[df["codigo"]==(by_cantidadVentas["codigo"][4])].reset_index()
+#print(dfhayulla)
+
+for dia in range(0,7):
+    df5=dfhayulla[dfhayulla["dia"]==dia]
+    df6=dfhayulla[dfhayulla["dia"]==dia+7]
+    promedioVentas=df5["dia"].size+df6["dia"].size
+    print(promedioVentas, " Pan hayulla 480 grs son vendidos el dia ",dia+1," de la semana")
 
 
