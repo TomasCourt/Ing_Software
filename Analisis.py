@@ -49,7 +49,7 @@ for dia in range(0,7):
     df5=dfEmpanaPino[dfEmpanaPino["dia"]==dia]
     df6=dfEmpanaPino[dfEmpanaPino["dia"]==dia+7]
     promedioVentas=df5["dia"].size+df6["dia"].size
-    print(promedioVentas, " Empanadas de pino son vendidas el dia ",dia+1," de la semana")
+    print(promedioVentas, " Empanadas de pino se venderan el dia ",dia+1," de la semana")
 
 
 dfEmpanaQueso=df[df["codigo"]==(by_cantidadVentas["codigo"][3])].reset_index()
@@ -59,7 +59,7 @@ for dia in range(0,7):
     df5=dfEmpanaQueso[dfEmpanaQueso["dia"]==dia]
     df6=dfEmpanaQueso[dfEmpanaQueso["dia"]==dia+7]
     promedioVentas=df5["dia"].size+df6["dia"].size
-    print(promedioVentas, " Empanadas de queso son vendidas el dia ",dia+1," de la semana")
+    print(promedioVentas, " Empanadas de queso se venderan el dia ",dia+1," de la semana")
 
 
 dfhayulla=df[df["codigo"]==(by_cantidadVentas["codigo"][4])].reset_index()
@@ -69,6 +69,6 @@ for dia in range(0,7):
     df5=dfhayulla[dfhayulla["dia"]==dia]
     df6=dfhayulla[dfhayulla["dia"]==dia+7]
     promedioVentas=df5["dia"].size+df6["dia"].size
-    print(promedioVentas, " Pan hayulla 480 grs son vendidos el dia ",dia+1," de la semana")
+    print(promedioVentas, " Pan hayulla 480 grs se venderan el dia ",dia+1," de la semana")
 
 
